@@ -21,7 +21,9 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
    
 - **Terraform**: Update and install with `sudo apt-get update && sudo apt-get install -y gnupg software-properties-common wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee 
    /usr/share/keyrings/hashicorp-archive-keyring.gpg echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee 
-   /etc/apt/sources.list.d/hashicorp.list sudo apt update && sudo apt-get install terraform`
+
+  /etc/apt/sources.list.d/hashicorp.list sudo apt update && sudo apt-get install terraform`
+  
 - Verify the installation with `terraform --version`.
   
 - **Python**: Install with `sudo apt update sudo apt install python3.8 python3-pip`
@@ -48,8 +50,8 @@ cd TerraformIac
 
 4. **Deploy Infrastructure with Terraform**
 ```bash
-terraform init ( Initialize the working directory and install dependencies.)
-terraform plan(Review what changes Terraform plans to make)
+terraform init (Initialize the working directory and install dependencies.)
+terraform plan (Review what changes Terraform plans to make)
 terraform apply (Apply the changes as per the plan)
 ```
 
@@ -66,6 +68,7 @@ pip install -r requirements.txt
 python3 app.py
 ```
 ![Screenshot 2024-11-15 044241](https://github.com/user-attachments/assets/d66613eb-cd1f-45ce-a5ed-c66d8a6265d5)(Terminal)
+
 ![Screenshot 2024-11-15 060448](https://github.com/user-attachments/assets/8df33dd2-ad8b-4b14-a0bc-140ad4bc6404)(Application)
 
 ## Infrastructure Components
