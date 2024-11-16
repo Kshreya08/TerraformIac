@@ -17,7 +17,7 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
 ```
 ### Prerequisites and Installation Guide
 - **LocalStack**: Start with `docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack`
--  verify with `curl http://localhost:4566/_localstack/health`.
+  verify with `curl http://localhost:4566/_localstack/health`.
    
 - **Terraform**: Update and install Terraform by executing the following commands:
 ```bash
@@ -36,7 +36,7 @@ sudo apt update && sudo apt-get install terraform
 - **AWS CLI**: Install by running `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip sudo ./aws/install`.
 
 
-## Quick Start
+### Quick Start
 
 1. **Clone the Repository**
 ```bash
