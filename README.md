@@ -48,9 +48,9 @@ Region: us-west-1
 4. **Deploy Infrastructure with Terraform**
 ```bash
 cd terraform
-terraform init
-terraform plan
-terraform apply
+terraform init ( Initialize the working directory and install dependencies.)
+terraform plan(Review what changes Terraform plans to make)
+terraform apply (Apply the changes as per the plan)
 ```
 
 5. **Set Up Python Environment**
@@ -71,7 +71,6 @@ python app.py
 ### Amazon SQS
 - Standard queue for message processing
 - Message retention period: 14 days
-- Visibility timeout: 30 seconds
 
 ### Amazon S3
 - Bucket for file storage
@@ -80,7 +79,6 @@ python app.py
 
 ### AWS Secrets Manager
 - Stores application secrets
-- Automatic rotation enabled
 - Encrypted storage
 
 ### EC2 Instance
@@ -165,6 +163,7 @@ git commit -m "Your message"
 git push origin master
 ```
 
+terraform destroy
 
 
 ## Acknowledgments
