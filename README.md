@@ -2,6 +2,9 @@
 
 This project demonstrates setting up a local AWS infrastructure using LocalStack and Terraform, along with a sample Python application that interacts with various AWS services.
 
+**Infrastructure as Code:** Terraform automates and manages cloud services with repeatable configurations, reducing human error and ensuring consistency across environments.
+**Local Testing:** LocalStack facilitates local emulation of AWS services, speeding up development and testing by allowing issues to be addressed before live deployment.
+
 ## Project Structure
 ```
 ├── app/
