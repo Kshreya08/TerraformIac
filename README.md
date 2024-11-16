@@ -15,137 +15,36 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
 ├── .gitignore
 └── README.md
 ```
+### Prerequisites and Installation Guide
+- **LocalStack**: Start with `docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack`
+-  verify with `curl http://localhost:4566/_localstack/health`.
+-  
+- **Terraform**: Update and install with `sudo apt-get update && sudo apt-get install -y gnupg software-properties-common wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list sudo apt update && sudo apt-get install terraform`
+- verify the installation with `terraform --version`.
+- 
+- **Python**: Install with `sudo apt update sudo apt install python3.8 python3-pip`
+- verify with `python --version` and `pip --version`.
+- 
+- **Docker**: Install on Linux with `sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io sudo systemctl start docker sudo systemctl enable docker`.
+- 
+- **AWS CLI**: Install by running `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip sudo ./aws/install`.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Development Prerequisites</title>
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        .prerequisite {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f5f5f5;
-        }
-        .prerequisite h2 {
-            color: #2c3e50;
-            margin-top: 0;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        .command-block {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-family: monospace;
-            white-space: pre-wrap;
-        }
-        .verification {
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #e8f6f3;
-            border-left: 4px solid #2ecc71;
-        }
-        .verification h3 {
-            margin: 0;
-            color: #27ae60;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Development Environment Prerequisites</h1>
-
-        <div class="prerequisite">
-            <h2>1. LocalStack (Latest Version)</h2>
-            <div class="command-block">docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack</div>
-            <div class="verification">
-                <h3>Verification</h3>
-                <div class="command-block">curl http://localhost:4566/_localstack/health</div>
-            </div>
-        </div>
-
-        <div class="prerequisite">
-            <h2>2. Terraform Installation</h2>
-            <div class="command-block">sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
-
-wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
-
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-
-sudo apt update && sudo apt-get install terraform</div>
-            <div class="verification">
-                <h3>Verification</h3>
-                <div class="command-block">terraform --version  # Should be >= 1.0.0</div>
-            </div>
-        </div>
-
-        <div class="prerequisite">
-            <h2>3. Python Installation (>= 3.8)</h2>
-            <div class="command-block">sudo apt update
-sudo apt install python3.8 python3-pip</div>
-            <div class="verification">
-                <h3>Verification</h3>
-                <div class="command-block">python --version  # Should be >= 3.8
-pip --version</div>
-            </div>
-        </div>
-
-        <div class="prerequisite">
-            <h2>4. Docker Installation (Linux)</h2>
-            <div class="command-block">sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo systemctl start docker
-sudo systemctl enable docker</div>
-        </div>
-
-        <div class="prerequisite">
-            <h2>5. AWS CLI Installation</h2>
-            <div class="command-block">curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install</div>
-            <div class="verification">
-                <h3>Verification</h3>
-                <div class="command-block">aws --version</div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
 
 ## Quick Start
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/Kshreya08/TerraformIac.git
 ```
 
 2. **Start LocalStack**
 ```bash
-localstack start
+cd TerraformIac
 ```
-
-3. **Configure AWS CLI for LocalStack**
-```bash
-aws configure --profile localstack
-AWS Access Key ID: test
-AWS Secret Access Key: test
-Region: us-west-1
-```
+3. **Before executing Terraform commands, make sure that the Docker container for LocalStack is up and running.**
 
 4. **Deploy Infrastructure with Terraform**
 ```bash
-cd terraform
 terraform init ( Initialize the working directory and install dependencies.)
 terraform plan(Review what changes Terraform plans to make)
 terraform apply (Apply the changes as per the plan)
@@ -161,8 +60,10 @@ pip install -r requirements.txt
 
 6. **Run the Application**
 ```bash
-python app.py
+python3 app.py
 ```
+![Screenshot 2024-11-15 044241](https://github.com/user-attachments/assets/d66613eb-cd1f-45ce-a5ed-c66d8a6265d5)(Terminal)
+![Screenshot 2024-11-15 060448](https://github.com/user-attachments/assets/8df33dd2-ad8b-4b14-a0bc-140ad4bc6404)(Application)
 
 ## Infrastructure Components
 
@@ -206,15 +107,6 @@ python app.py
    - Health checks
    - Instance management
 
-## Environment Variables
-
-```bash
-export AWS_PROFILE=localstack
-export AWS_DEFAULT_REGION=us-west-1
-export LOCALSTACK_HOSTNAME=localhost
-export LOCALSTACK_ENDPOINT=http://localhost:4566
-```
-```
 
 ## Troubleshooting
 
@@ -232,7 +124,6 @@ export LOCALSTACK_ENDPOINT=http://localhost:4566
    - Verify virtual environment activation
    - Check dependencies installation
    - Validate AWS credentials
-
 
 ## Development Commands
 
