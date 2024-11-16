@@ -1,0 +1,12 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Ignore Terraform's .terraform directory
+.terraform/
+
+# Ignore any temporary or editor-specific files
+*.log
+*.tmp
+.idea/
+.vscode/
