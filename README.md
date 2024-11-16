@@ -19,11 +19,13 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
 - **LocalStack**: Start with `docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack`
 -  verify with `curl http://localhost:4566/_localstack/health`.
    
-- **Terraform**: Update and install with `sudo apt-get update && sudo apt-get install -y gnupg software-properties-common wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee 
-   /usr/share/keyrings/hashicorp-archive-keyring.gpg echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee 
+- **Terraform**: Update and install Terraform by executing the following commands:
+```bash
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt-get install terraform
 
-  /etc/apt/sources.list.d/hashicorp.list sudo apt update && sudo apt-get install terraform`
-  
 - Verify the installation with `terraform --version`.
   
 - **Python**: Install with `sudo apt update sudo apt install python3.8 python3-pip`
@@ -68,6 +70,7 @@ pip install -r requirements.txt
 python3 app.py
 ```
 ![Screenshot 2024-11-15 044241](https://github.com/user-attachments/assets/d66613eb-cd1f-45ce-a5ed-c66d8a6265d5)(Terminal)
+
 
 ![Screenshot 2024-11-15 060448](https://github.com/user-attachments/assets/8df33dd2-ad8b-4b14-a0bc-140ad4bc6404)(Application)
 
