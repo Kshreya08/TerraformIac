@@ -19,10 +19,29 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
 ## Prerequisites
 
 - LocalStack (latest version)
-- Terraform >= 1.0.0
-- Python >= 3.8
+-  docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+-  To verify LocalStack is running: curl http://localhost:4566/_localstack/health
+- Terraform >= 
+- sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt-get install terraform
+Verify installation: terraform --version  # Should be >= 1.0.0
+- Python >= 3.8 Linux
+- sudo apt update
+sudo apt install python3.8 python3-pip
+Verify installation: python --version  # Should be >= 3.8
+pip --version
 - Docker
+-  Linux
+- sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
 - AWS CLI
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 ## Quick Start
 
