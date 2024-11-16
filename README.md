@@ -42,7 +42,7 @@ localstack start
 aws configure --profile localstack
 AWS Access Key ID: test
 AWS Secret Access Key: test
-Region: us-east-1
+Region: us-west-1
 ```
 
 4. **Deploy Infrastructure with Terraform**
@@ -114,7 +114,7 @@ python app.py
 
 ```bash
 export AWS_PROFILE=localstack
-export AWS_DEFAULT_REGION=us-east-1
+export AWS_DEFAULT_REGION=us-west-1
 export LOCALSTACK_HOSTNAME=localhost
 export LOCALSTACK_ENDPOINT=http://localhost:4566
 ```
@@ -137,13 +137,6 @@ export LOCALSTACK_ENDPOINT=http://localhost:4566
    - Check dependencies installation
    - Validate AWS credentials
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## Development Commands
 
