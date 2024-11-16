@@ -1,4 +1,4 @@
-# LocalStack Terraform Infrastructure Project
+# LocalStack Terraform Infrastructure Part1
 
 This project demonstrates setting up a local AWS infrastructure using LocalStack and Terraform, along with a sample Python application that interacts with various AWS services.
 
@@ -18,15 +18,17 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
 ### Prerequisites and Installation Guide
 - **LocalStack**: Start with `docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack`
 -  verify with `curl http://localhost:4566/_localstack/health`.
--  
-- **Terraform**: Update and install with `sudo apt-get update && sudo apt-get install -y gnupg software-properties-common wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list sudo apt update && sudo apt-get install terraform`
-- verify the installation with `terraform --version`.
-- 
+   
+- **Terraform**: Update and install with `sudo apt-get update && sudo apt-get install -y gnupg software-properties-common wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee 
+   /usr/share/keyrings/hashicorp-archive-keyring.gpg echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee 
+   /etc/apt/sources.list.d/hashicorp.list sudo apt update && sudo apt-get install terraform`
+- Verify the installation with `terraform --version`.
+  
 - **Python**: Install with `sudo apt update sudo apt install python3.8 python3-pip`
 - verify with `python --version` and `pip --version`.
-- 
+  
 - **Docker**: Install on Linux with `sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io sudo systemctl start docker sudo systemctl enable docker`.
-- 
+  
 - **AWS CLI**: Install by running `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip sudo ./aws/install`.
 
 
@@ -41,6 +43,7 @@ git clone https://github.com/Kshreya08/TerraformIac.git
 ```bash
 cd TerraformIac
 ```
+
 3. **Before executing Terraform commands, make sure that the Docker container for LocalStack is up and running.**
 
 4. **Deploy Infrastructure with Terraform**
