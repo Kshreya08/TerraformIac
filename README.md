@@ -16,32 +16,111 @@ This project demonstrates setting up a local AWS infrastructure using LocalStack
 └── README.md
 ```
 
-## Prerequisites
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Development Prerequisites</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .prerequisite {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+        }
+        .prerequisite h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .command-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .verification {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f6f3;
+            border-left: 4px solid #2ecc71;
+        }
+        .verification h3 {
+            margin: 0;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Development Environment Prerequisites</h1>
 
-- LocalStack (latest version)
--  docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
--  To verify LocalStack is running: curl http://localhost:4566/_localstack/health
-- Terraform >= 
-- sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+        <div class="prerequisite">
+            <h2>1. LocalStack (Latest Version)</h2>
+            <div class="command-block">docker run --rm -d -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack</div>
+            <div class="verification">
+                <h3>Verification</h3>
+                <div class="command-block">curl http://localhost:4566/_localstack/health</div>
+            </div>
+        </div>
+
+        <div class="prerequisite">
+            <h2>2. Terraform Installation</h2>
+            <div class="command-block">sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update && sudo apt-get install terraform
-Verify installation: terraform --version  # Should be >= 1.0.0
-- Python >= 3.8 Linux
-- sudo apt update
-sudo apt install python3.8 python3-pip
-Verify installation: python --version  # Should be >= 3.8
-pip --version
-- Docker
--  Linux
-- sudo apt-get update
+
+sudo apt update && sudo apt-get install terraform</div>
+            <div class="verification">
+                <h3>Verification</h3>
+                <div class="command-block">terraform --version  # Should be >= 1.0.0</div>
+            </div>
+        </div>
+
+        <div class="prerequisite">
+            <h2>3. Python Installation (>= 3.8)</h2>
+            <div class="command-block">sudo apt update
+sudo apt install python3.8 python3-pip</div>
+            <div class="verification">
+                <h3>Verification</h3>
+                <div class="command-block">python --version  # Should be >= 3.8
+pip --version</div>
+            </div>
+        </div>
+
+        <div class="prerequisite">
+            <h2>4. Docker Installation (Linux)</h2>
+            <div class="command-block">sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
-sudo systemctl enable docker
-- AWS CLI
-- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo systemctl enable docker</div>
+        </div>
+
+        <div class="prerequisite">
+            <h2>5. AWS CLI Installation</h2>
+            <div class="command-block">curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
-sudo ./aws/install
+sudo ./aws/install</div>
+            <div class="verification">
+                <h3>Verification</h3>
+                <div class="command-block">aws --version</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 ## Quick Start
 
